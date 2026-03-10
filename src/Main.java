@@ -16,13 +16,13 @@ class Main {
             int C = Integer.parseInt(parts[1]); //n of columns
             int M = Integer.parseInt(parts[2]); //max n of connsecutive jumps
             int N = Integer.parseInt(parts[3]); //maximum jumps
-            String [][] grid = new String[R][C]; //grid to store the values
+            char [][] grid = new char[R][C]; //grid to store the values
 
             for (int j = 0; j < R; j++){
                 // Read the grid values
                 String row = in.readLine();                
                 for (int k = 0; k < C; k++) {
-                    grid[j][k] = String.valueOf(row.charAt(k));
+                    grid[j][k] = row.charAt(k);
                 }
             }
             Game game = new Game(grid, R, C, M, N);
