@@ -7,6 +7,7 @@ class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int nTests = Integer.parseInt(in.readLine());
+
         for (int i = 0; i < nTests; i++) {
             String line = in.readLine();
             String[] parts = line.trim().split(" ");
@@ -14,16 +15,15 @@ class Main {
             int nColumns = Integer.parseInt(parts[1]);
             int nConsJumps = Integer.parseInt(parts[2]);
             int nJumps = Integer.parseInt(parts[3]);
-            char [][] gameGrid = new char[nRows][nColumns]; // pass not the grid, grid in castle
+
+            CrystalCastle game = new CrystalCastle(nRows, nColumns, nConsJumps, nJumps);
 
             for (int j = 0; j < nRows; j++){
                 String row = in.readLine();
                 for (int k = 0; k < nColumns; k++) {
-                    gameGrid[j][k] = row.charAt(k);
+                    game.setCell(j, k, row.charAt(k));
                 }
             }
-
-            CrystalCastle game = new CrystalCastle(gameGrid, nRows, nColumns, nConsJumps, nJumps);
             System.out.println(game.solve());
         }
         in.close();
