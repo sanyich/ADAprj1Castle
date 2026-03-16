@@ -14,7 +14,7 @@ class Main {
             int nColumns = Integer.parseInt(parts[1]);
             int nConsJumps = Integer.parseInt(parts[2]);
             int nJumps = Integer.parseInt(parts[3]);
-            char [][] gameGrid = new char[nRows][nColumns];
+            char [][] gameGrid = new char[nRows][nColumns]; // pass not the grid, grid in castle
 
             for (int j = 0; j < nRows; j++){
                 String row = in.readLine();

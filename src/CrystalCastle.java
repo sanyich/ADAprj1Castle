@@ -6,6 +6,7 @@ public class CrystalCastle {
     private final int nColumns;
     private final int nConsJumps;
     private final int nJumps;
+    //constants for tiles
 
     public CrystalCastle(char[][] gameGrid, int nRows, int nColumns, int nConsJumps, int nJumps) {
         this.gameGrid = gameGrid;
@@ -170,3 +171,6 @@ public class CrystalCastle {
         return gameGrid[x][y] != 'X' && gameGrid[x][y] != 'J';
     }
 }
+
+//include reading time in report to calculate complexity of reading
+// also check O or Θ for each operation
