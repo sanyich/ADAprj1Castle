@@ -7,6 +7,7 @@ public class CrystalCastle {
     private final int nConsJumps;
     private final int nJumps;
     //constants for tiles
+    //find a way to do less checking to save time. ex, create a row/collum outside of the grid so we don't overtep it?
 
     public CrystalCastle(char[][] gameGrid, int nRows, int nColumns, int nConsJumps, int nJumps) {
         this.gameGrid = gameGrid;
