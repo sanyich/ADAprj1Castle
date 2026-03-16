@@ -1,12 +1,12 @@
 public class CrystalCastle {
 
-    private static final long MOD = 1_000_000_000L + 7; //output it modulo 10^9 + 7
+    private static final long MOD = 1_000_000_007L; //output it modulo 10^9 + 7
     private final char[][] gameGrid;
     private final int nRows;
     private final int nColumns;
     private final int nConsJumps;
     private final int nJumps;
-    //constants for tiles
+    // constants for tiles
     private static final char BLOCKED_TILE = '#';
     private static final char JUMP_FORBIDDEN_TILE = 'J';
     private static final char DIAGONAL_JUMP_FORBIDDEN_TILE = 'X';
@@ -26,8 +26,8 @@ public class CrystalCastle {
         }
     }
 
-    public void setCell(int j, int k, char charAt) {
-        gameGrid[j+1][k+1] = charAt;
+    public void setCell(int j, int k, char tile) {
+        gameGrid[j+1][k+1] = tile;
     }
 
 
@@ -41,7 +41,7 @@ public class CrystalCastle {
      * Space complexity optimization:
      * Only three rows are stored (current, next, after next)
      * Since moves only depend on three rows
-     * @return number of possible ways to reach bottom-right tile {@value #MOD}
+     * @return number of valid paths modulo {@value #MOD}
      */
     public long solve() {
 
@@ -137,17 +137,6 @@ public class CrystalCastle {
     }
 
     /**
-     * Checks if the position given belongs to the grid
-     * @param x number of the row
-     * @param y number of the column
-     * @return true if tile (x,y) is in the grid, false otherwise
-     
-    private boolean insideGrid(int x, int y) {
-        return x >= 0 && x < nRows && y >= 0 && y < nColumns;
-    }
-    */
-
-    /**
      * Checks if a tile can't be stepped on.
      *
      * @param x number of the row
@@ -191,6 +180,3 @@ public class CrystalCastle {
     }
 
 }
-
-//include reading time in report to calculate complexity of reading
-// also check O or Θ for each operation
