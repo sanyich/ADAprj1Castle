@@ -2,8 +2,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
+/**
+ * Entry point of the program.
+ *
+ * Reads multiple test cases, builds the corresponding CrystalCastle
+ * instances and prints the number of valid paths for each case.
+ *
+ * Input format:
+ * - First line: number of test cases
+ * - For each test case:
+ *   - integers R, C, M, N
+ *   - R lines describing the grid
+ *
+ * Output:
+ * - For each test case, prints the number of valid paths modulo 1e9+7
+ *
+ * @author Ilia Taitsel 67258
+ * @author Oleksandra Kozlova 68739
+ */
 class Main {
+
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 

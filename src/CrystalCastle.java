@@ -1,3 +1,25 @@
+/**
+ * Represents a single instance of the Crystal Castle problem.
+ *
+ * The goal is to compute the number of valid paths from the top-left
+ * tile to the bottom-right tile of a grid, under constraints on jumps.
+ *
+ * The solution uses dynamic programming where each state is defined as:
+ * (row, col, consec, total), representing the number of ways to reach
+ * the destination from position (row, col), given that:
+ * - consec: number of consecutive jumps already used
+ * - total: total number of jumps already used
+ *
+ * To improve efficiency:
+ * - A padded grid is used to simplify boundary checks
+ * - Only three rows are stored (sliding array)
+ *
+ * Time complexity: O(R * C * M * N)
+ * Space complexity: O(C * M * N)
+ *
+ * @author Ilia Taitsel 67258
+ * @author Oleksandra Kozlova 68739
+ */
 public class CrystalCastle {
 
     private static final long MOD = 1_000_000_007L; //output it modulo 10^9 + 7
@@ -26,8 +48,15 @@ public class CrystalCastle {
         }
     }
 
-    public void setCell(int j, int k, char tile) {
-        gameGrid[j+1][k+1] = tile;
+
+    /**
+     * Sets the value of the tile with given coordinates
+     * @param j number of the row of the grid
+     * @param k number of the column
+     * @param value the value that should be obtained by the tile
+     */
+    public void setCell(int j, int k, char value) {
+        gameGrid[j+1][k+1] = value;
     }
 
 
